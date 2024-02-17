@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  back-end:
+    build: .
+    network_mode: host
+    env_file: .env
+    volumes:
+      - ./logs:/logs
+    # ports:
+    #   - "5000:5000"
+    # depends_on:
+    #   - database
+
+  # database:
+  #   image: postgresql
+  #   restart: always
+  #   environment:
+  #     POSTGRES_PASSWORD: postgres
+  #     PGDATA: /var/lib/postgresql/data/pgdata
+  #   volumes:
+  #     - ./database:/var/lib/postgresql/data
